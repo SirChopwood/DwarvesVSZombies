@@ -13,6 +13,11 @@ UDvZInventoryComponent::UDvZInventoryComponent()
 	// ...
 }
 
+void UDvZInventoryComponent::AddItemToContents(int32 Index, ADvZItemBase* Item, bool& Success)
+{
+
+}
+
 
 // Called when the game starts
 void UDvZInventoryComponent::BeginPlay()
