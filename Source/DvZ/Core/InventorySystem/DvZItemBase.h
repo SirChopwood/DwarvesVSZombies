@@ -9,7 +9,7 @@
 #include "DvZItemBase.generated.h"
 
 UCLASS(Blueprintable)
-class DVZ_API ADvZItemBase : public AActor
+class DVZ_API ADvZItemBase : public AActor, public IInventoryInterface
 {
 	GENERATED_BODY()
 	

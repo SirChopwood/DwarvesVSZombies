@@ -24,7 +24,7 @@ public:
 	void GetTooltipData(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText& Title, FText& Description, TArray<FS_TooltipStat>& Stats);
 
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent, Category="Tooltip")
+	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent , Category="Tooltip")
 	void HideTooltip(bool& Success);
 
 	/** Please add a function description */
