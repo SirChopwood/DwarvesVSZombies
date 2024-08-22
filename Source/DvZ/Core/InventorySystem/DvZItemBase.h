@@ -7,7 +7,7 @@
 #include "Net/UnrealNetwork.h"
 #include "DvZItemBase.generated.h"
 
-UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent), Blueprintable)
+UCLASS(Blueprintable)
 class DVZ_API ADvZItemBase : public AActor
 {
 	GENERATED_BODY()
@@ -15,10 +15,6 @@ class DVZ_API ADvZItemBase : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ADvZItemBase();
-
-	/** Please add a variable description */ 
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Default")
-	TObjectPtr<USceneComponent> DefaultSceneRoot; 
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Default")

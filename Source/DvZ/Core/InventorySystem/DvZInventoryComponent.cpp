@@ -13,7 +13,7 @@ UDvZInventoryComponent::UDvZInventoryComponent()
 	// ...
 }
 
-void UDvZInventoryComponent::AddItemToContents(int32 Index, ADvZItemBase* Item, bool& Success)
+void UDvZInventoryComponent::AddItemToContents(int32 Index, ADvZItemBase *Item, bool& Success)
 {
 
 }

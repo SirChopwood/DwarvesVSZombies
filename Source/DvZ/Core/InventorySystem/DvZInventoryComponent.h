@@ -10,7 +10,7 @@
 
 
 
-UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent), Blueprintable )
+UCLASS( Blueprintable )
 class DVZ_API UDvZInventoryComponent : public UDvZCharacterComponent
 {
 	GENERATED_BODY()
