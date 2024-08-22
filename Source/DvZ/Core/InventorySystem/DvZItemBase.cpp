@@ -23,7 +23,7 @@ void ADvZItemBase::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-
+// The replication logic for the variable Quantity making it replicated in all clients connected to the server
 void ADvZItemBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
