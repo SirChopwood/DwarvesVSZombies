@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Net/UnrealNetwork.h"
+#include "InventoryInterface.h"
 #include "DvZItemBase.generated.h"
 
 UCLASS(Blueprintable)

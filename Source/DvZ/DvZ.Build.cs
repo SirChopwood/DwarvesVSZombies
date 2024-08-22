@@ -8,7 +8,7 @@ public class DvZ : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Networking", "NetCommon" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Networking", "NetCommon","SlateCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
