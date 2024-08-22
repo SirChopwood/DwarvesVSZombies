@@ -24,11 +24,11 @@ public:
 	void GetTooltipData(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText& Title, FText& Description, TArray<FS_TooltipStat>& Stats);
 
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent , Category="Tooltip")
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Tooltip")
 	void HideTooltip(bool& Success);
 
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent, Category="Item Slots")
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Item Slots")
 	void GetItemFromSlot(AActor*& Item);
 
 	/** Please add a function description */
@@ -36,11 +36,11 @@ public:
 	void SetItemToSlot(AActor* Item);
 
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent, Category="Tooltip")
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Tooltip")
 	void ShowTooltip(FText& Title, FText& Description, UPARAM(ref) TArray<FS_TooltipStat>& Stats);
 
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent, Category="Item Slots")
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Item Slots")
 	void SetDisplayQuantity(int32 Amount);
 
 	
