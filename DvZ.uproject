@@ -185,10 +185,6 @@
 			"Enabled": false
 		},
 		{
-			"Name": "RiderSourceCodeAccess",
-			"Enabled": false
-		},
-		{
 			"Name": "SoundFields",
 			"Enabled": false
 		},
