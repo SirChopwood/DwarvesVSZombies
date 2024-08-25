@@ -24,7 +24,7 @@ void UItemObject::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifet
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	// Add properties to replicated for the ADvZItemBase class
+	// Add properties to replicated for the UItemObject class
 	DOREPLIFETIME(UItemObject, Quantity);
 }
 

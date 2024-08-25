@@ -27,7 +27,7 @@ public:
 	int32 MaxDurability;
 
 	/* Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", meta=(UIMin="1", ClampMin="1"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default",Replicated, meta=(UIMin="1", ClampMin="1"))
 	int32 CurrentDurability;
 
 	/* Please add a variable description */
@@ -42,5 +42,5 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
 	TObjectPtr<USkeletalMesh> ArmourMesh;
 
-	
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 };
