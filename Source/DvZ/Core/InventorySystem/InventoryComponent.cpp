@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "DvZInventoryComponent.h"
+#include "InventoryComponent.h"
 
 // Sets default values for this component's properties
-UDvZInventoryComponent::UDvZInventoryComponent()
+UInventoryComponent::UInventoryComponent()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
@@ -13,14 +13,14 @@ UDvZInventoryComponent::UDvZInventoryComponent()
 	// ...
 }
 
-void UDvZInventoryComponent::AddItemToContents(int32 Index, ADvZItemBase *Item, bool& Success)
+void UInventoryComponent::AddItemToContents(int32 Index, UItemObject *Item, bool& Success)
 {
 
 }
 
 
 // Called when the game starts
-void UDvZInventoryComponent::BeginPlay()
+void UInventoryComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -30,7 +30,7 @@ void UDvZInventoryComponent::BeginPlay()
 
 
 // Called every frame
-void UDvZInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 

@@ -20,7 +20,7 @@ class DVZ_API IInventoryInterface {
 public:
 	
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Tooltip")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Tooltip")
 	void GetTooltipData(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText& Title, FText& Description, TArray<FS_TooltipStat>& Stats);
 
 	/** Please add a function description */
@@ -29,11 +29,11 @@ public:
 
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Item Slots")
-	void GetItemFromSlot(AActor*& Item);
+	void GetItemFromSlot(UObject*& Item);
 
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Item Slots")
-	void SetItemToSlot(AActor* Item);
+	void SetItemToSlot(UObject* Item);
 
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Tooltip")

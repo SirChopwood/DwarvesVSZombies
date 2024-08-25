@@ -3,36 +3,26 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "../Character/DvZCharacterComponent.h"
-#include "DvZItemBase.h"
 #include "Components/ActorComponent.h"
-#include "DvZInventoryComponent.generated.h"
+#include "CharacterComponent.generated.h"
 
 
-
-UCLASS( Blueprintable )
-class DVZ_API UDvZInventoryComponent : public UDvZCharacterComponent
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent), Blueprintable)
+class DVZ_API UCharacterComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UDvZInventoryComponent();
-
-	/** Please add a function description */
-	UFUNCTION(BlueprintCallable)
-	void AddItemToContents(int32 Index, ADvZItemBase *Item, bool& Success);
-
+	UCharacterComponent();
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-	
 
 		
 };

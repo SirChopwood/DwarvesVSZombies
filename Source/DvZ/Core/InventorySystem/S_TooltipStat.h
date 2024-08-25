@@ -3,7 +3,7 @@
 #include "Styling/CoreStyle.h"
 #include "S_TooltipStat.generated.h"
 /** Please add a struct description */
-USTRUCT(BlueprintType)
+USTRUCT(Blueprintable)
 struct DVZ_API FS_TooltipStat
 {
 	GENERATED_BODY()
