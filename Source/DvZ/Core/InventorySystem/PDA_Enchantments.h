@@ -11,7 +11,7 @@ public:
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable)
 	void GetFormattedName(int32 Tier, FText& FormattedName);
-public:
+	
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
 	FText Name;

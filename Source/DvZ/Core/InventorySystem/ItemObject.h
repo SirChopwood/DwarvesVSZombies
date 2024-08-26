@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Net/UnrealNetwork.h"
 #include "InventoryInterface.h"
-#include "PDA_Enchantments.h"
+//#include "PDA_Enchantments.h"
 #include "S_EnchantmentTiers.h"
 #include "ItemObject.generated.h"
 
@@ -48,7 +48,7 @@ public:
 	int32 MaxStackSize;
 
 	UFUNCTION(BlueprintCallable, Category="Tooltip")
-	virtual void GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText Title, FText Description, TArray<FS_TooltipStat>& Stats);
+	virtual void GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat> PreviousStats, FText Title, FText Description, TArray<FS_TooltipStat>& Stats);
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")

@@ -3,6 +3,8 @@
 
 #include "ItemObject.h"
 
+#include <iostream>
+
 // Sets default values
 UItemObject::UItemObject(): Quantity(1), MaxStackSize(1)
 {
@@ -14,9 +16,22 @@ void UItemObject::GetEnchantment(UPDA_Enchantments* Query, bool& Found, UObject*
 {
 }
 
-void UItemObject::GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText Title, FText Description, TArray<FS_TooltipStat>& Stats)
+void UItemObject::GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat> PreviousStats, FText Title, FText Description, TArray<FS_TooltipStat>& Stats)
 {
-	FString TooltipText;
+	for(auto & [Enchantment, Tier] : Enchantments)
+	{
+		FText EnchantmentName;
+		Enchantment -> GetFormattedName(Tier, EnchantmentName);
+		FText text = FText::FromString(FString(TEXT("- " , EnchantmentName)));
+		FColor Yellow = FColor(255, 187, 0);
+		FLinearColor LinearYellow = FLinearColor::FromSRGBColor(Yellow);
+		FS_TooltipStat tempEnchStat;
+		tempEnchStat.Text = text;
+		tempEnchStat.Colour = LinearYellow;
+		
+		//PreviousStats.Append(tempEnchStat); 
+		
+	}
 }
 
 // The replication logic for the variable Quantity making it replicated in all clients connected to the server
@@ -27,4 +42,4 @@ void UItemObject::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifet
 	// Add properties to replicated for the UItemObject class
 	DOREPLIFETIME(UItemObject, Quantity);
 }
-
+	
