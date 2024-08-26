@@ -4,7 +4,7 @@
 #include "S_TooltipStat.generated.h"
 /** Please add a struct description */
 USTRUCT(Blueprintable)
-struct DVZ_API FS_TooltipStat
+struct FS_TooltipStat
 {
 	GENERATED_BODY()
 public:

@@ -21,7 +21,8 @@ public:
 	
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Tooltip")
-	void GetTooltipData(UPARAM(ref) TArray<FS_TooltipStat> PreviousStats, FText& Title, FText& Description, TArray<FS_TooltipStat>& Stats);
+	void GetTooltipData(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText& Title, FText& Description,
+	                    TArray<FS_TooltipStat>& Stats);
 
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Tooltip")

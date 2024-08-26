@@ -8,6 +8,7 @@
 #include "InventoryInterface.h"
 //#include "PDA_Enchantments.h"
 #include "S_EnchantmentTiers.h"
+#include "Kismet/KismetArrayLibrary.h"
 #include "ItemObject.generated.h"
 
 UCLASS(Blueprintable)
@@ -48,7 +49,8 @@ public:
 	int32 MaxStackSize;
 
 	UFUNCTION(BlueprintCallable, Category="Tooltip")
-	virtual void GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat> PreviousStats, FText Title, FText Description, TArray<FS_TooltipStat>& Stats);
+	virtual void GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText& Title,
+	                                           FText& Description, TArray<FS_TooltipStat>& Stats);
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
