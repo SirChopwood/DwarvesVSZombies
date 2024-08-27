@@ -21,8 +21,17 @@ void UItemObject::GetEnchantment(UPDA_Enchantments* Query, bool& Found, UObject*
 		{
 			Tier = ElementTier;
 			Enchantment = Query;
+			PrimaryValue = ElementEnchantment->PrimaryValue[ElementTier-1];
+			SecondaryValue = ElementEnchantment->SecondaryValue[ElementTier-1];
+			TertiaryValue = ElementEnchantment->TertiaryValue[ElementTier-1];
+			Found = true;
 			break;
 		}
+		Tier = 0;
+		PrimaryValue = 0.0;
+		SecondaryValue = 0.0;
+		TertiaryValue = 0.0;
+		Found = false;
 	}
 }
 

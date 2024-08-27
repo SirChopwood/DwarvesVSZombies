@@ -31,4 +31,5 @@ public:
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
 	TArray<double> TertiaryValue;
+	
 };
