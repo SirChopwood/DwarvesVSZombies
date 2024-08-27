@@ -14,6 +14,16 @@ UItemObject::UItemObject(): Quantity(1), MaxStackSize(1)
 void UItemObject::GetEnchantment(UPDA_Enchantments* Query, bool& Found, UObject*& Enchantment, int32& Tier,
 	double& PrimaryValue, double& SecondaryValue, double& TertiaryValue)
 {
+	for(auto& [ElementEnchantment, ElementTier] : Enchantments)
+	{
+		
+		if(Query == ElementEnchantment)
+		{
+			Tier = ElementTier;
+			Enchantment = Query;
+			break;
+		}
+	}
 }
 
 void UItemObject::GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText& Title,
@@ -24,13 +34,13 @@ void UItemObject::GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipSta
 	{
 		FText EnchantmentName;
 		Enchantment->GetFormattedName(Tier, EnchantmentName);
-		FText EnchantmentText = FText::FromString("- {EnchantmentName}");
+		FText EnchantmentText = FText::FromString("- " + EnchantmentName.ToString());
 		const FLinearColor Yellow = FColor::FromHex("FFBB00CC");
 		PreviousStats.Append({{EnchantmentText, Yellow}});
 	}
 
 	// Get Quantity Stat
-	FText QuantityStatText = FText::FromString("Quantity: {Current} / {Max}");
+	FText QuantityStatText = FText::FromString("Quantity: "+ FString::FromInt(Quantity) +"/" + FString::FromInt(MaxStackSize));
 	const FLinearColor White = FColor::FromHex("FFFFFFCC");
 	PreviousStats.Append({{QuantityStatText, White}});
 

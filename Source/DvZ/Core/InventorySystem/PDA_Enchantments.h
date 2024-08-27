@@ -20,7 +20,7 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default", meta=(MultiLine="true"))
 	int32 MaxTiers;
 
-	/** Please add a variable description */
+	/* Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
 	TArray<double> PrimaryValue;
 

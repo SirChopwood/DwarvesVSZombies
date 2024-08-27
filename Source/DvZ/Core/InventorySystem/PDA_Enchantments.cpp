@@ -31,5 +31,5 @@ void UPDA_Enchantments::GetFormattedName(int32 Tier, FText& FormattedName)
 	uint8 ClampTier = std::clamp(Tier, 1, MaxTiers);
 	FString RomanNumeral = To_Roman(ClampTier).c_str();
 	//Output
-	FormattedName = FText::FromString("{name} {To_Roman(ClampTier)}");
+	FormattedName = FText::FromString(Name.ToString() + " " + RomanNumeral);
 }

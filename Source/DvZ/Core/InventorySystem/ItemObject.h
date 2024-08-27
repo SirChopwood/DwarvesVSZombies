@@ -19,7 +19,7 @@ class DVZ_API UItemObject : public UObject, public IInventoryInterface
 public:	
 	// Sets default values for this actor's properties
 	UItemObject();
-	/** Please add a function description */
+	/* Finds the enchantment  */
 	UFUNCTION(BlueprintCallable, Category="Default")
 	void GetEnchantment(UPDA_Enchantments* Query, bool& Found, UObject*& Enchantment, int32& Tier, double& PrimaryValue, double& SecondaryValue, double& TertiaryValue);
 
@@ -50,7 +50,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category="Tooltip")
 	virtual void GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText& Title,
-	                                           FText& Description, TArray<FS_TooltipStat>& Stats);
+	                                           FText& Description, TArray<FS_TooltipStat>& Stats) override;
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
