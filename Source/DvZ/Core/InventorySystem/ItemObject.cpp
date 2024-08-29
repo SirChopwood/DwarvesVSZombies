@@ -19,6 +19,7 @@ void UItemObject::GetEnchantment(UPDA_Enchantments* Query, bool& Found, UObject*
 		
 		if(Query == ElementEnchantment)
 		{
+			//output if found
 			Tier = ElementTier;
 			Enchantment = Query;
 			PrimaryValue = ElementEnchantment->PrimaryValue[ElementTier-1];
@@ -27,6 +28,7 @@ void UItemObject::GetEnchantment(UPDA_Enchantments* Query, bool& Found, UObject*
 			Found = true;
 			break;
 		}
+		//output if not found
 		Tier = 0;
 		PrimaryValue = 0.0;
 		SecondaryValue = 0.0;

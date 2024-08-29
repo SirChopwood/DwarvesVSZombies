@@ -19,7 +19,7 @@ class DVZ_API UItemObject : public UObject, public IInventoryInterface
 public:	
 	// Sets default values for this actor's properties
 	UItemObject();
-	/* Finds the enchantment  */
+	/* Check if an enchantment is on the item  */
 	UFUNCTION(BlueprintCallable, Category="Default")
 	void GetEnchantment(UPDA_Enchantments* Query, bool& Found, UObject*& Enchantment, int32& Tier, double& PrimaryValue, double& SecondaryValue, double& TertiaryValue);
 
@@ -48,21 +48,18 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Default", meta = (UIMin = "1", ClampMin = "1"))
 	int32 MaxStackSize;
 
+	//The tooltip information of the item
 	UFUNCTION(BlueprintCallable, Category="Tooltip")
 	virtual void GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText& Title,
-	                                           FText& Description, TArray<FS_TooltipStat>& Stats) override;
+	                            FText& Description, TArray<FS_TooltipStat>& Stats) override;
 
-	/** Please add a variable description */
+	/** Please add a function description */
+	
+	
+	/** An array of all the enchantments for the item */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
 	TArray<FS_EnchantmentTiers> Enchantments;
 
-protected:
-	// Called when the game starts or when spawned
-	
-
-public:	
-	// Called every frame
-	
-
+	//Replication logic for unreals build in multiplayer api
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 };

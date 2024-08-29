@@ -5,6 +5,9 @@
 #include "CoreMinimal.h"
 #include "ItemObject.h"
 #include "E_EquipmentSlots.h"
+#include "Kismet/KismetMathLibrary.h"
+#include "PDA_Enchantments.h"
+#include "DA_Enchantment_Reinforced.h"
 #include "ItemObject_Armour.generated.h"
 
 /**
@@ -18,15 +21,15 @@ public:
 	/* Please add a function description */
 	//virtual void GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText Title, FText Description, TArray<FS_TooltipStat>& Stats) override;
 	UItemObject_Armour();
-	/* Please add a function description */
+	/* Probably need two more inputs...*/
 	UFUNCTION(BlueprintCallable, Category="Default")
 	void GetArmourValues(double& BaseArmour, double& ArmourPostEnchants, double& ArmourPostDurability);
 	
-	/* Please add a variable description */
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", meta=(UIMin="1", ClampMin="1"))
 	int32 MaxDurability;
 
-	/* Please add a variable description */
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default",Replicated, meta=(UIMin="1", ClampMin="1"))
 	int32 CurrentDurability;
 
@@ -41,6 +44,9 @@ public:
 	/* Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
 	TObjectPtr<USkeletalMesh> ArmourMesh;
+
+	virtual void GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText& Title,
+	                            FText& Description, TArray<FS_TooltipStat>& Stats) override;
 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 };
