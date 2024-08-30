@@ -18,8 +18,7 @@ class DVZ_API UItemObject_Armour : public UItemObject
 {
 	GENERATED_BODY()
 public:
-	/* Please add a function description */
-	//virtual void GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText Title, FText Description, TArray<FS_TooltipStat>& Stats) override;
+
 	UItemObject_Armour();
 	/* Probably need two more inputs...*/
 	UFUNCTION(BlueprintCallable, Category="Default")
