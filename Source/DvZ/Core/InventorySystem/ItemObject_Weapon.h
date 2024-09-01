@@ -1,9 +1,9 @@
 ﻿#pragma once
 
-#include "E_WeaponType.h"
 #include "ItemObject.h"
 #include "ItemObject_Weapon.generated.h"
 
+enum class EWeaponType : uint8;
 /** Please add a class description */
 UCLASS(Blueprintable, BlueprintType)
 class UItemObject_Weapon : public UItemObject
@@ -16,5 +16,5 @@ public:
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
-	TEnumAsByte<E_WeaponType> WeaponType;
+	TEnumAsByte<EWeaponType> WeaponType;
 };

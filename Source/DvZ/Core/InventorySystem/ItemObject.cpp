@@ -3,7 +3,8 @@
 
 #include "ItemObject.h"
 
-#include <iostream>
+
+
 
 // Sets default values
 UItemObject::UItemObject(): Quantity(1), MaxStackSize(1)

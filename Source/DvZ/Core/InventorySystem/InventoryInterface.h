@@ -10,7 +10,7 @@
  * 
  */
 UINTERFACE(Blueprintable)
-class DVZ_API UInventoryInterface : public UInterface
+class UInventoryInterface : public UInterface
 {
 	GENERATED_BODY()
 };
@@ -25,23 +25,23 @@ public:
 	                    TArray<FS_TooltipStat>& Stats);
 
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Tooltip")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Tooltip")
 	void HideTooltip(bool& Success);
 
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Item Slots")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Item Slots")
 	void GetItemFromSlot(UObject*& Item);
 
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Item Slots")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Item Slots")
 	void SetItemToSlot(UObject* Item);
 
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Tooltip")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Tooltip")
 	void ShowTooltip(FText& Title, FText& Description, UPARAM(ref) TArray<FS_TooltipStat>& Stats);
 
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Item Slots")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Item Slots")
 	void SetDisplayQuantity(int32 Amount);
 
 	

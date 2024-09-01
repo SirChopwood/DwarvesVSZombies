@@ -11,7 +11,7 @@
 
 
 UCLASS( Blueprintable )
-class DVZ_API UInventoryComponent : public UCharacterComponent
+class UInventoryComponent : public UCharacterComponent
 {
 	GENERATED_BODY()
 
@@ -21,7 +21,7 @@ public:
 
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable)
-	void AddItemToContents(int32 Index, UItemObject *Item, bool& Success);
+	virtual void AddItemToContents(int32 Index, UItemObject *Item, bool& Success);
 
 
 protected:

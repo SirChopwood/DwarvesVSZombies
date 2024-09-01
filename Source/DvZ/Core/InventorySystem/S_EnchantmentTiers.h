@@ -2,8 +2,9 @@
 
 
 #include "CoreMinimal.h"
-#include "PDA_Enchantments.h"
 #include "S_EnchantmentTiers.generated.h"
+class UPDA_Enchantments;
+
 USTRUCT(Blueprintable)
 struct FS_EnchantmentTiers 
 {

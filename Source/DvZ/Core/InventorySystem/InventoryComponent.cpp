@@ -13,6 +13,7 @@ UInventoryComponent::UInventoryComponent()
 	// ...
 }
 
+
 void UInventoryComponent::AddItemToContents(int32 Index, UItemObject *Item, bool& Success)
 {
 

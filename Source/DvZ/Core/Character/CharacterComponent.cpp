@@ -19,8 +19,15 @@ void UCharacterComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
+	TObjectPtr<AActor> OwnerActor = GetOwner();
+	Cast<ACharacter>(OwnerActor);
 
 	// ...
+	
+}
+
+void UCharacterComponent::BeginPlayServer()
+{
 	
 }
 

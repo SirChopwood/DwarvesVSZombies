@@ -41,8 +41,8 @@ void UItemObject_Armour::GetTooltipData_Implementation(TArray<FS_TooltipStat>& P
 	double Alpha = static_cast<double>( CurrentDurability )/static_cast<double>( MaxDurability );
 	const FLinearColor Red = FColor::FromHex("FF0000CC");
 	const FLinearColor Lime = FColor::FromHex("00FF00CC");
-	const FLinearColor LerpColour = UKismetMathLibrary::LinearColorLerp(Red,Lime,Alpha);
-	Stats.Append({{DurabilityStatText, LerpColour}});
+	const FLinearColor LerpLinearColour = Red + Alpha * (Lime - Red);
+	Stats.Append({{DurabilityStatText, LerpLinearColour}});
 
 	
 }

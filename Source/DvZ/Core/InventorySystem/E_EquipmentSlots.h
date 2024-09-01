@@ -4,7 +4,7 @@
 #include "E_EquipmentSlots.generated.h"
 
 UENUM(BlueprintType)
-enum class E_EquipmentSlots : uint8 {
+enum class EEquipmentSlots : uint8 {
 	VE_Head         UMETA(DisplayName="Head"),
 	VE_Chest        UMETA(DisplayName="Chest"),
 	VE_Legs			UMETA(DisplayName="Legs"),

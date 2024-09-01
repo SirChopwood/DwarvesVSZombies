@@ -6,13 +6,13 @@
 #include "GameFramework/Actor.h"
 #include "Net/UnrealNetwork.h"
 #include "InventoryInterface.h"
-//#include "PDA_Enchantments.h"
-#include "S_EnchantmentTiers.h"
-#include "Kismet/KismetArrayLibrary.h"
 #include "ItemObject.generated.h"
 
+struct FS_EnchantmentTiers;
+class UPDA_Enchantments;
+
 UCLASS(Blueprintable)
-class DVZ_API UItemObject : public UObject, public IInventoryInterface
+class UItemObject : public UObject, public IInventoryInterface
 {
 	GENERATED_BODY()
 	
@@ -51,11 +51,9 @@ public:
 	//The tooltip information of the item
 	UFUNCTION(BlueprintCallable, Category="Tooltip")
 	virtual void GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText& Title,
-	                            FText& Description, TArray<FS_TooltipStat>& Stats) override;
+	                                           FText& Description, TArray<FS_TooltipStat>& Stats) override;
 
-	/** Please add a function description */
-	
-	
+
 	/** An array of all the enchantments for the item */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
 	TArray<FS_EnchantmentTiers> Enchantments;

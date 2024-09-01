@@ -1,0 +1,38 @@
+﻿#pragma once
+
+#include "../Character/CharacterStatComponent.h"
+
+class UDwarfArmourComponent;
+enum class EHealthStates : uint8;
+enum class EDamageTypes : uint8;
+/** Please add a class description */
+UCLASS(Blueprintable, BlueprintType)
+class UHealthComponent : public UCharacterStatComponent
+{
+	GENERATED_BODY()
+public:
+	/** Please add a function description */
+	UFUNCTION(BlueprintCallable)
+	void AddDamageOverTime(double Value, TEnumAsByte<EDamageTypes> IgnoresArmour, double DamagePerSecond, TArray<double> NewDoTStacks);
+
+	/** Please add a function description */
+	UFUNCTION(BlueprintCallable)
+	void TickDamageOverTime();
+public:
+	/** Please add a variable description */
+	//static_assert(false, "You will need to add DOREPLIFETIME(UBP_DvZHealthComponent, HealthState) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default", Replicated)
+	TEnumAsByte<EHealthStates> HealthState;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	TObjectPtr<UUserWidget> StatBar;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	TObjectPtr<UDwarfArmourComponent> ArmourComponent;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	TArray<FS_DamageOverTimeStack> DoTStacks;
+};

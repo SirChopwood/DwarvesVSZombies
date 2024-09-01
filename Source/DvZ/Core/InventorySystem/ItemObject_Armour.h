@@ -4,17 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "ItemObject.h"
-#include "E_EquipmentSlots.h"
-#include "Kismet/KismetMathLibrary.h"
-#include "PDA_Enchantments.h"
 #include "DA_Enchantment_Reinforced.h"
 #include "ItemObject_Armour.generated.h"
 
-/**
- * 
- */
+
+enum class EEquipmentSlots : uint8;
+
 UCLASS(Blueprintable)
-class DVZ_API UItemObject_Armour : public UItemObject
+class UItemObject_Armour : public UItemObject
 {
 	GENERATED_BODY()
 public:
@@ -34,7 +31,7 @@ public:
 
 	/* Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
-	TEnumAsByte<E_EquipmentSlots> Slot;
+	TEnumAsByte<EEquipmentSlots> Slot;
 
 	/* Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", DisplayName="BaseArmour")
@@ -45,7 +42,7 @@ public:
 	TObjectPtr<USkeletalMesh> ArmourMesh;
 
 	virtual void GetTooltipData_Implementation(UPARAM(ref) TArray<FS_TooltipStat>& PreviousStats, FText& Title,
-	                            FText& Description, TArray<FS_TooltipStat>& Stats) override;
+	                                           FText& Description, TArray<FS_TooltipStat>& Stats) override;
 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 };
