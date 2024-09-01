@@ -2,6 +2,7 @@
 
 #include "../Character/CharacterStatComponent.h"
 #include "HealthComponent.generated.h"
+struct FS_DamageOverTimeStack;
 class UDwarfArmourComponent;
 enum class EHealthStates : uint8;
 enum class EDamageTypes : uint8;
@@ -20,7 +21,6 @@ public:
 	void TickDamageOverTime();
 public:
 	/** Please add a variable description */
-	//static_assert(false, "You will need to add DOREPLIFETIME(UBP_DvZHealthComponent, HealthState) to GetLifetimeReplicatedProps");
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default", Replicated)
 	TEnumAsByte<EHealthStates> HealthState;
 
@@ -32,10 +32,10 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
 	TObjectPtr<UDwarfArmourComponent> ArmourComponent;
 
-	/* Please add a variable description 
+	/* Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
 	TArray<FS_DamageOverTimeStack> DoTStacks;
-	*/
+	
 	
 	//Replication logic for unreals build in multiplayer api
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
