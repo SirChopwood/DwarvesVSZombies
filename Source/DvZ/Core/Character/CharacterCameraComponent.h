@@ -105,4 +105,9 @@ public:
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Config")
 	bool CameraRotationSmoothing;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Config")
+	FVector CameraOffset;
+
 };

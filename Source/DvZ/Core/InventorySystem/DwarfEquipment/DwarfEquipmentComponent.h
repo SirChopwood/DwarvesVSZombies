@@ -12,8 +12,8 @@ public:
 
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable)
-	void RemoveItemFromContents(int32 Index, UItemObject* Item, bool& Success);
-public:
+	virtual void RemoveItemFromContents(int32 Index, UItemObject* Item, bool& Success) override;
+
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
 	TObjectPtr<UUserWidget> EquipmentMenu;

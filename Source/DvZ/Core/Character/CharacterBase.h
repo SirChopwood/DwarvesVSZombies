@@ -4,6 +4,7 @@
 #include "GameFramework/Character.h"
 #include "CharacterBase.generated.h"
 
+class UCharacterInventoryComponent;
 class UCharacterCameraComponent;
 class UHealthComponent;
 class UCombatModeComponent;
@@ -17,6 +18,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void UpdateMovementSpeed();
 public:
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Default")
+	TObjectPtr<UCharacterInventoryComponent> BP_DvZCharacterInventoryComponent;
+
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Default")
 	TObjectPtr<UCombatModeComponent> BP_DvZCombatModeComponent;

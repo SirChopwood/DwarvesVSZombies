@@ -19,9 +19,8 @@ public:
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable)
 	void OnRep_MinValue();
-public:
+	
 	/** Please add a variable description */
-	//static_assert(false, "You will need to add DOREPLIFETIME(UBP_DvZCharacterStatComponent, CurrentValue) to GetLifetimeReplicatedProps");
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", ReplicatedUsing="OnRep_CurrentValue")
 	double CurrentValue;
 
