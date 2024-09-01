@@ -26,10 +26,6 @@ void UCharacterComponent::BeginPlay()
 	
 }
 
-void UCharacterComponent::BeginPlayServer()
-{
-	
-}
 
 
 // Called every frame

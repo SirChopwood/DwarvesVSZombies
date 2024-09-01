@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include "../Character/CharacterStatComponent.h"
-
+#include "HealthComponent.generated.h"
 class UDwarfArmourComponent;
 enum class EHealthStates : uint8;
 enum class EDamageTypes : uint8;
@@ -32,7 +32,11 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
 	TObjectPtr<UDwarfArmourComponent> ArmourComponent;
 
-	/** Please add a variable description */
+	/* Please add a variable description 
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
 	TArray<FS_DamageOverTimeStack> DoTStacks;
+	*/
+	
+	//Replication logic for unreals build in multiplayer api
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 };

@@ -2,7 +2,7 @@
 
 #include "../Character/CharacterComponent.h"
 #include "Net/UnrealNetwork.h"
-
+#include "CombatModeComponent.generated.h"
 /** Please add a class description */
 UCLASS(Blueprintable, BlueprintType)
 class UCombatModeComponent : public UCharacterComponent
@@ -56,7 +56,7 @@ public:
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
-	TObjectPtr<UUserWidget> CombatModeWidget;
+	TObjectPtr<UUserWidget> CombatModeWidget ;
 
 	//Replication logic for unreals build in multiplayer api
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

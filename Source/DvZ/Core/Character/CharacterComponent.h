@@ -17,6 +17,7 @@ class DVZ_API UCharacterComponent : public UActorComponent
 	GENERATED_BODY()
 
 public:
+	UCharacterComponent();
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Runtime")
 	TObjectPtr<ACharacter> ACharacterBase;

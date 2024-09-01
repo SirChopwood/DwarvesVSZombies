@@ -6,9 +6,8 @@
 #include "S_TooltipStat.h"
 #include "UObject/Interface.h"
 #include "InventoryInterface.generated.h"
-/**
- * 
- */
+class UItemObject;
+
 UINTERFACE(Blueprintable)
 class UInventoryInterface : public UInterface
 {
@@ -30,11 +29,11 @@ public:
 
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Item Slots")
-	void GetItemFromSlot(UObject*& Item);
+	void GetItemFromSlot(UItemObject*& Item);
 
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Item Slots")
-	void SetItemToSlot(UObject* Item);
+	void SetItemToSlot(UItemObject* Item);
 
 	/** Please add a function description */
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Tooltip")

@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "../InventoryComponent.h"
-
+#include "DwarfEquipmentComponent.generated.h"
 /** Please add a class description */
 UCLASS(Blueprintable, BlueprintType)
 class UDwarfEquipmentComponent : public UInventoryComponent
@@ -8,7 +8,6 @@ class UDwarfEquipmentComponent : public UInventoryComponent
 	GENERATED_BODY()
 public:
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable)
 	virtual void AddItemToContents(int32 Index, UItemObject* Item, bool& Success) override;
 
 	/** Please add a function description */

@@ -11,7 +11,7 @@ public class DvZ : ModuleRules
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
 			"Core", "CoreUObject", "Engine", "InputCore", "Networking", "NetCommon", "SlateCore", "AutomationTest",
-			"UnrealEd"
+			"UnrealEd", "UMG"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });

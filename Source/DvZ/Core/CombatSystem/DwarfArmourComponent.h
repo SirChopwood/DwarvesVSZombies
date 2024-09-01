@@ -1,6 +1,8 @@
 ﻿#pragma once
 #include "../Character/CharacterStatComponent.h"
+#include "DwarfArmourComponent.generated.h"
 
+class UDwarfEquipmentComponent;
 /** Please add a class description */
 UCLASS(Blueprintable, BlueprintType)
 class UDwarfArmourComponent : public UCharacterStatComponent
@@ -17,7 +19,7 @@ public:
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
-	TObjectPtr<UBP_DwarfEquipmentComponent_C> EquipmentComponent;
+	TObjectPtr<UDwarfEquipmentComponent> EquipmentComponent;
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
