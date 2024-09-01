@@ -15,16 +15,7 @@ UCharacterComponent::UCharacterComponent()
 
 
 // Called when the game starts
-void UCharacterComponent::BeginPlay()
-{
-	Super::BeginPlay();
 
-	TObjectPtr<AActor> OwnerActor = GetOwner();
-	Cast<ACharacter>(OwnerActor);
-
-	// ...
-	
-}
 
 
 
@@ -34,5 +25,48 @@ void UCharacterComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
+}
+void UCharacterComponent::BeginPlay()
+{
+	UActorComponent::BeginPlay();
+	
+	//Subscribing to the events
+	ParentControllerChanged.AddDynamic(this,&UCharacterComponent::OnParentControllerChanged);
+	PossessedByLocalPlayer.AddDynamic(this, &UCharacterComponent::OnPossessedByLocalPlayer);
+	PlayServer.AddDynamic(this, &UCharacterComponent::BeginPlayServer);
+	
+	TObjectPtr<AActor> OwnerActor = GetOwner();
+	ParentCharacter = Cast<ACharacter>(OwnerActor);
+	TObjectPtr<AController> Controller = ParentCharacter->GetController();
+	if(IsValid(Controller))
+	{
+		TObjectPtr<AController> OldController;
+		//broadcasting the event ParentControllerChanged
+		ParentControllerChanged.Broadcast(ParentCharacter,OldController,Controller);
+	}
+	if(OwnerActor->HasAuthority())
+	{
+		PlayServer.Broadcast();
+	}
+	
+	
+}
+
+void UCharacterComponent::BeginPlayServer()
+{
+}
+
+void UCharacterComponent::OnPossessedByLocalPlayer()
+{
+}
+
+void UCharacterComponent::OnParentControllerChanged(APawn* Pawn, AController* OldController, AController* NewController)
+{
+	
+	
+	if(Pawn->IsLocallyControlled())
+	{
+		PossessedByLocalPlayer.Broadcast();
+	}
 }
 
