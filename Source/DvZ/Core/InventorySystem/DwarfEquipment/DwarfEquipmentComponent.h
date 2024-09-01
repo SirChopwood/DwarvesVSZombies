@@ -11,7 +11,6 @@ public:
 	virtual void AddItemToContents(int32 Index, UItemObject* Item, bool& Success) override;
 
 	/** Please add a function description */
-	UFUNCTION(BlueprintCallable)
 	virtual void RemoveItemFromContents(int32 Index, UItemObject* Item, bool& Success) override;
 
 	/** Please add a variable description */

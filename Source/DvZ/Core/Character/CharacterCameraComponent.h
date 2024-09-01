@@ -33,10 +33,7 @@ public:
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Config")
 	bool ShowDebug;
-
-	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Runtime")
-	TObjectPtr<ACharacter> ParentCharacter;
+	
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Config")
