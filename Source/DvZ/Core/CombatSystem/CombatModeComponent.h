@@ -9,16 +9,20 @@ class UCombatModeComponent : public UCharacterComponent
 {
 	GENERATED_BODY()
 public:
+	/** Please add a function description */
+	UFUNCTION(BlueprintCallable)
+	void OnRep_IsCombatModeActive();
+	
 	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Runtime", ReplicatedUsing="OnRep_IsCombatModeActive")
 	bool IsCombatModeActive;
 
 	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Runtime")
 	FTimerHandle CombatModeCooldownTimer;
 
 	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Config")
 	float CombatModeCooldown;
 
 	/** Please add a variable description */
@@ -27,36 +31,28 @@ public:
 	FOnCombatModeChanged OnCombatModeChanged;
 
 	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Config")
 	double PassiveModeWalkSpeed;
 
 	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Config")
 	double CombatModeWalkSpeed;
 
 	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default", Replicated)
-	FVector TargetPos;
-
-	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
-	FTimerHandle CombatModeDirectionTickServerTimer;
-
-	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Runtime")
 	FTimerHandle CombatModeDirectionTickClientTimer;
 
 	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Config")
 	FRotator PassiveModeRotationRate;
 
 	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Config")
 	FRotator CombatModeRotationRate;
 
 	/** Please add a variable description */
-	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
-	TObjectPtr<UUserWidget> CombatModeWidget ;
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Runtime")
+	TObjectPtr<UUserWidget> CombatModeWidget;
 
 	//Replication logic for unreals build in multiplayer api
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
