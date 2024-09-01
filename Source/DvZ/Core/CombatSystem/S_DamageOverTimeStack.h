@@ -1,5 +1,5 @@
 ﻿#pragma once
-
+#include "S_DamageOverTimeStack.generated.h"
 enum class EDamageTypes : uint8;
 
 USTRUCT(Blueprintable)

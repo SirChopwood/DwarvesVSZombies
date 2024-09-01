@@ -3,8 +3,8 @@
 
 #include "ItemObject.h"
 
-
-
+#include "PDA_Enchantments.h"
+#include "S_EnchantmentTiers.h"
 
 // Sets default values
 UItemObject::UItemObject(): Quantity(1), MaxStackSize(1)
